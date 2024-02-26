@@ -10,7 +10,7 @@
 | **buyer_cellphone** | **String** |  |  |
 | **cashier_user_id** | **Integer** |  |  |
 | **commerce_id** | **Integer** |  |  |
-| **commerce_branch_id_id** | **Integer** |  | [optional] |
+| **commerce_branch_id** | **Integer** |  |  |
 
 ## Example
 
@@ -24,7 +24,7 @@ instance = BancardPixServiceClient::PaymentHookCreateRequestPaymentHook.new(
   buyer_cellphone: null,
   cashier_user_id: null,
   commerce_id: null,
-  commerce_branch_id_id: null
+  commerce_branch_id: null
 )
 ```
 

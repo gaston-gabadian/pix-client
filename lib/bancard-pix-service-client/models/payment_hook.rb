@@ -29,6 +29,10 @@ module BancardPixServiceClient
 
     attr_accessor :buyer_cellphone
 
+    attr_accessor :commerce_id
+
+    attr_accessor :commerce_branch_id
+
     attr_accessor :pix_copy_past
 
     attr_accessor :sale_id
@@ -55,6 +59,8 @@ module BancardPixServiceClient
         :'buyer_cpf' => :'buyer_cpf',
         :'buyer_email' => :'buyer_email',
         :'buyer_cellphone' => :'buyer_cellphone',
+        :'commerce_id' => :'commerce_id',
+        :'commerce_branch_id' => :'commerce_branch_id',
         :'pix_copy_past' => :'pix_copy_past',
         :'sale_id' => :'sale_id',
         :'price_national_currency' => :'price_national_currency',
@@ -81,10 +87,12 @@ module BancardPixServiceClient
         :'buyer_cpf' => :'String',
         :'buyer_email' => :'String',
         :'buyer_cellphone' => :'String',
+        :'commerce_id' => :'Integer',
+        :'commerce_branch_id' => :'Integer',
         :'pix_copy_past' => :'String',
         :'sale_id' => :'Integer',
-        :'price_national_currency' => :'Float',
-        :'vet_tax' => :'Float',
+        :'price_national_currency' => :'String',
+        :'vet_tax' => :'String',
         :'qr_code_expiration' => :'String',
         :'created_at' => :'String',
         :'updated_at' => :'String',
@@ -95,6 +103,7 @@ module BancardPixServiceClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'qr_base64'
       ])
     end
 
@@ -153,6 +162,18 @@ module BancardPixServiceClient
         self.buyer_cellphone = attributes[:'buyer_cellphone']
       else
         self.buyer_cellphone = nil
+      end
+
+      if attributes.key?(:'commerce_id')
+        self.commerce_id = attributes[:'commerce_id']
+      else
+        self.commerce_id = nil
+      end
+
+      if attributes.key?(:'commerce_branch_id')
+        self.commerce_branch_id = attributes[:'commerce_branch_id']
+      else
+        self.commerce_branch_id = nil
       end
 
       if attributes.key?(:'pix_copy_past')
@@ -237,6 +258,14 @@ module BancardPixServiceClient
         invalid_properties.push('invalid value for "buyer_cellphone", buyer_cellphone cannot be nil.')
       end
 
+      if @commerce_id.nil?
+        invalid_properties.push('invalid value for "commerce_id", commerce_id cannot be nil.')
+      end
+
+      if @commerce_branch_id.nil?
+        invalid_properties.push('invalid value for "commerce_branch_id", commerce_branch_id cannot be nil.')
+      end
+
       if @pix_copy_past.nil?
         invalid_properties.push('invalid value for "pix_copy_past", pix_copy_past cannot be nil.')
       end
@@ -265,10 +294,6 @@ module BancardPixServiceClient
         invalid_properties.push('invalid value for "updated_at", updated_at cannot be nil.')
       end
 
-      if @qr_base64.nil?
-        invalid_properties.push('invalid value for "qr_base64", qr_base64 cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -283,6 +308,8 @@ module BancardPixServiceClient
       return false if @buyer_cpf.nil?
       return false if @buyer_email.nil?
       return false if @buyer_cellphone.nil?
+      return false if @commerce_id.nil?
+      return false if @commerce_branch_id.nil?
       return false if @pix_copy_past.nil?
       return false if @sale_id.nil?
       return false if @price_national_currency.nil?
@@ -290,7 +317,6 @@ module BancardPixServiceClient
       return false if @qr_code_expiration.nil?
       return false if @created_at.nil?
       return false if @updated_at.nil?
-      return false if @qr_base64.nil?
       true
     end
 
@@ -306,6 +332,8 @@ module BancardPixServiceClient
           buyer_cpf == o.buyer_cpf &&
           buyer_email == o.buyer_email &&
           buyer_cellphone == o.buyer_cellphone &&
+          commerce_id == o.commerce_id &&
+          commerce_branch_id == o.commerce_branch_id &&
           pix_copy_past == o.pix_copy_past &&
           sale_id == o.sale_id &&
           price_national_currency == o.price_national_currency &&
@@ -325,7 +353,7 @@ module BancardPixServiceClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, usd_amount_cents, hook_alias, cashier_user_id, buyer_cpf, buyer_email, buyer_cellphone, pix_copy_past, sale_id, price_national_currency, vet_tax, qr_code_expiration, created_at, updated_at, qr_base64].hash
+      [id, usd_amount_cents, hook_alias, cashier_user_id, buyer_cpf, buyer_email, buyer_cellphone, commerce_id, commerce_branch_id, pix_copy_past, sale_id, price_national_currency, vet_tax, qr_code_expiration, created_at, updated_at, qr_base64].hash
     end
 
     # Builds the object from hash

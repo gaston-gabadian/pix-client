@@ -32,6 +32,17 @@ describe 'PaymentHooksApi' do
     end
   end
 
+  # unit tests for cancel_payment_hook
+  # Cancel payment hook
+  # @param id id
+  # @param [Hash] opts the optional parameters
+  # @return [ShowPaymentHook]
+  describe 'cancel_payment_hook test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for create_payment_hook
   # Create payment hook
   # @param [Hash] opts the optional parameters

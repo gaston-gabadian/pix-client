@@ -11,10 +11,12 @@
 | **buyer_cpf** | **String** |  |  |
 | **buyer_email** | **String** |  |  |
 | **buyer_cellphone** | **String** |  |  |
+| **commerce_id** | **Integer** |  |  |
+| **commerce_branch_id** | **Integer** |  |  |
 | **pix_copy_past** | **String** |  |  |
 | **sale_id** | **Integer** |  |  |
-| **price_national_currency** | **Float** |  |  |
-| **vet_tax** | **Float** |  |  |
+| **price_national_currency** | **String** |  |  |
+| **vet_tax** | **String** |  |  |
 | **qr_code_expiration** | **String** |  |  |
 | **created_at** | **String** |  |  |
 | **updated_at** | **String** |  |  |
@@ -33,6 +35,8 @@ instance = BancardPixServiceClient::PaymentHook.new(
   buyer_cpf: null,
   buyer_email: null,
   buyer_cellphone: null,
+  commerce_id: null,
+  commerce_branch_id: null,
   pix_copy_past: null,
   sale_id: 12345,
   price_national_currency: 107.25,

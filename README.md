@@ -56,17 +56,15 @@ Please follow the [installation](#installation) procedure and then run the follo
 # Load the gem
 require 'bancard-pix-service-client'
 
-api_instance = BancardPixServiceClient::ApplicationsApi.new
-opts = {
-  application_create_request: BancardPixServiceClient::ApplicationCreateRequest.new({application: BancardPixServiceClient::ApplicationCreateRequestApplication.new({commerce_id: 37, commerce_branch_id: 37})}) # ApplicationCreateRequest | 
-}
+api_instance = BancardPixServiceClient::PaymentHooksApi.new
+id = 56 # Integer | id
 
 begin
-  #Create application
-  result = api_instance.create_application(opts)
+  #Cancel payment hook
+  result = api_instance.cancel_payment_hook(id)
   p result
 rescue BancardPixServiceClient::ApiError => e
-  puts "Exception when calling ApplicationsApi->create_application: #{e}"
+  puts "Exception when calling PaymentHooksApi->cancel_payment_hook: #{e}"
 end
 
 ```
@@ -77,28 +75,17 @@ All URIs are relative to *https://www.example.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BancardPixServiceClient::ApplicationsApi* | [**create_application**](docs/ApplicationsApi.md#create_application) | **POST** /applications | Create application
-*BancardPixServiceClient::ApplicationsApi* | [**delete_application**](docs/ApplicationsApi.md#delete_application) | **DELETE** /applications/{id} | Delete application
-*BancardPixServiceClient::ApplicationsApi* | [**list_applications**](docs/ApplicationsApi.md#list_applications) | **GET** /applications | List applications
-*BancardPixServiceClient::ApplicationsApi* | [**show_application**](docs/ApplicationsApi.md#show_application) | **GET** /applications/{id} | Show application
-*BancardPixServiceClient::ApplicationsApi* | [**update_application**](docs/ApplicationsApi.md#update_application) | **PUT** /applications/{id} | Update application
-*BancardPixServiceClient::PaymentHooksApi* | [**create_payment_hook**](docs/PaymentHooksApi.md#create_payment_hook) | **POST** /payment_hooks | Create payment hook
+*BancardPixServiceClient::PaymentHooksApi* | [**cancel_payment_hook**](docs/PaymentHooksApi.md#cancel_payment_hook) | **POST** /pix/api/payment_hooks/{id}/cancel | Cancel payment hook
+*BancardPixServiceClient::PaymentHooksApi* | [**create_payment_hook**](docs/PaymentHooksApi.md#create_payment_hook) | **POST** /pix/api/payment_hooks | Create payment hook
 
 
 ## Documentation for Models
 
- - [BancardPixServiceClient::Application](docs/Application.md)
- - [BancardPixServiceClient::ApplicationCreateRequest](docs/ApplicationCreateRequest.md)
- - [BancardPixServiceClient::ApplicationCreateRequestApplication](docs/ApplicationCreateRequestApplication.md)
- - [BancardPixServiceClient::ApplicationUpdateRequest](docs/ApplicationUpdateRequest.md)
- - [BancardPixServiceClient::ApplicationUpdateRequestApplication](docs/ApplicationUpdateRequestApplication.md)
  - [BancardPixServiceClient::ErrorResponse](docs/ErrorResponse.md)
  - [BancardPixServiceClient::ErrorResponseMessagesInner](docs/ErrorResponseMessagesInner.md)
- - [BancardPixServiceClient::ListApplications](docs/ListApplications.md)
  - [BancardPixServiceClient::PaymentHook](docs/PaymentHook.md)
  - [BancardPixServiceClient::PaymentHookCreateRequest](docs/PaymentHookCreateRequest.md)
  - [BancardPixServiceClient::PaymentHookCreateRequestPaymentHook](docs/PaymentHookCreateRequestPaymentHook.md)
- - [BancardPixServiceClient::ShowApplication](docs/ShowApplication.md)
  - [BancardPixServiceClient::ShowPaymentHook](docs/ShowPaymentHook.md)
 
 

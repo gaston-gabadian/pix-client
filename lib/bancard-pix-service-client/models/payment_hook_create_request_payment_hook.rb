@@ -27,7 +27,7 @@ module BancardPixServiceClient
 
     attr_accessor :commerce_id
 
-    attr_accessor :commerce_branch_id_id
+    attr_accessor :commerce_branch_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -38,7 +38,7 @@ module BancardPixServiceClient
         :'buyer_cellphone' => :'buyer_cellphone',
         :'cashier_user_id' => :'cashier_user_id',
         :'commerce_id' => :'commerce_id',
-        :'commerce_branch_id_id' => :'commerce_branch_id_id'
+        :'commerce_branch_id' => :'commerce_branch_id'
       }
     end
 
@@ -56,7 +56,7 @@ module BancardPixServiceClient
         :'buyer_cellphone' => :'String',
         :'cashier_user_id' => :'Integer',
         :'commerce_id' => :'Integer',
-        :'commerce_branch_id_id' => :'Integer'
+        :'commerce_branch_id' => :'Integer'
       }
     end
 
@@ -117,8 +117,10 @@ module BancardPixServiceClient
         self.commerce_id = nil
       end
 
-      if attributes.key?(:'commerce_branch_id_id')
-        self.commerce_branch_id_id = attributes[:'commerce_branch_id_id']
+      if attributes.key?(:'commerce_branch_id')
+        self.commerce_branch_id = attributes[:'commerce_branch_id']
+      else
+        self.commerce_branch_id = nil
       end
     end
 
@@ -151,6 +153,10 @@ module BancardPixServiceClient
         invalid_properties.push('invalid value for "commerce_id", commerce_id cannot be nil.')
       end
 
+      if @commerce_branch_id.nil?
+        invalid_properties.push('invalid value for "commerce_branch_id", commerce_branch_id cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -164,6 +170,7 @@ module BancardPixServiceClient
       return false if @buyer_cellphone.nil?
       return false if @cashier_user_id.nil?
       return false if @commerce_id.nil?
+      return false if @commerce_branch_id.nil?
       true
     end
 
@@ -178,7 +185,7 @@ module BancardPixServiceClient
           buyer_cellphone == o.buyer_cellphone &&
           cashier_user_id == o.cashier_user_id &&
           commerce_id == o.commerce_id &&
-          commerce_branch_id_id == o.commerce_branch_id_id
+          commerce_branch_id == o.commerce_branch_id
     end
 
     # @see the `==` method
@@ -190,7 +197,7 @@ module BancardPixServiceClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [usd_amount_cents, buyer_cpf, buyer_email, buyer_cellphone, cashier_user_id, commerce_id, commerce_branch_id_id].hash
+      [usd_amount_cents, buyer_cpf, buyer_email, buyer_cellphone, cashier_user_id, commerce_id, commerce_branch_id].hash
     end
 
     # Builds the object from hash

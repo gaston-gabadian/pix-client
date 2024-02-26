@@ -17,22 +17,14 @@ require 'bancard-pix-service-client/version'
 require 'bancard-pix-service-client/configuration'
 
 # Models
-require 'bancard-pix-service-client/models/application'
-require 'bancard-pix-service-client/models/application_create_request'
-require 'bancard-pix-service-client/models/application_create_request_application'
-require 'bancard-pix-service-client/models/application_update_request'
-require 'bancard-pix-service-client/models/application_update_request_application'
 require 'bancard-pix-service-client/models/error_response'
 require 'bancard-pix-service-client/models/error_response_messages_inner'
-require 'bancard-pix-service-client/models/list_applications'
 require 'bancard-pix-service-client/models/payment_hook'
 require 'bancard-pix-service-client/models/payment_hook_create_request'
 require 'bancard-pix-service-client/models/payment_hook_create_request_payment_hook'
-require 'bancard-pix-service-client/models/show_application'
 require 'bancard-pix-service-client/models/show_payment_hook'
 
 # APIs
-require 'bancard-pix-service-client/api/applications_api'
 require 'bancard-pix-service-client/api/payment_hooks_api'
 
 module BancardPixServiceClient
