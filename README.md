@@ -56,15 +56,21 @@ Please follow the [installation](#installation) procedure and then run the follo
 # Load the gem
 require 'bancard-pix-service-client'
 
-api_instance = BancardPixServiceClient::PaymentHooksApi.new
-id = 56 # Integer | id
+api_instance = BancardPixServiceClient::CommerceBranchUsersApi.new
+commerce_id = 56 # Integer | 
+opts = {
+  user_id: 56, # Integer | 
+  commerce_branch_id: 56, # Integer | 
+  page: 56, # Integer | 
+  per_page: 56 # Integer | 
+}
 
 begin
-  #Cancel payment hook
-  result = api_instance.cancel_payment_hook(id)
+  #Obtain commerce branch users report
+  result = api_instance.commerce_branch_users_report(commerce_id, opts)
   p result
 rescue BancardPixServiceClient::ApiError => e
-  puts "Exception when calling PaymentHooksApi->cancel_payment_hook: #{e}"
+  puts "Exception when calling CommerceBranchUsersApi->commerce_branch_users_report: #{e}"
 end
 
 ```
@@ -75,17 +81,25 @@ All URIs are relative to *https://www.example.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*BancardPixServiceClient::CommerceBranchUsersApi* | [**commerce_branch_users_report**](docs/CommerceBranchUsersApi.md#commerce_branch_users_report) | **GET** /pix/api/commerce_branch_users | Obtain commerce branch users report
+*BancardPixServiceClient::CommerceBranchUsersApi* | [**create_commerce_branch_user**](docs/CommerceBranchUsersApi.md#create_commerce_branch_user) | **POST** /pix/api/commerce_branch_users | Create commerce branch user
+*BancardPixServiceClient::CommerceBranchUsersApi* | [**destroy_commerce_branch_user**](docs/CommerceBranchUsersApi.md#destroy_commerce_branch_user) | **DELETE** /pix/api/commerce_branch_users/{id} | Destroy commerce branch user
 *BancardPixServiceClient::PaymentHooksApi* | [**cancel_payment_hook**](docs/PaymentHooksApi.md#cancel_payment_hook) | **POST** /pix/api/payment_hooks/{id}/cancel | Cancel payment hook
 *BancardPixServiceClient::PaymentHooksApi* | [**create_payment_hook**](docs/PaymentHooksApi.md#create_payment_hook) | **POST** /pix/api/payment_hooks | Create payment hook
 
 
 ## Documentation for Models
 
+ - [BancardPixServiceClient::CommerceBranchUser](docs/CommerceBranchUser.md)
+ - [BancardPixServiceClient::CommerceBranchUserCreateRequest](docs/CommerceBranchUserCreateRequest.md)
+ - [BancardPixServiceClient::CommerceBranchUserCreateRequestCommerceBranchUser](docs/CommerceBranchUserCreateRequestCommerceBranchUser.md)
+ - [BancardPixServiceClient::CommerceBranchUsersReport](docs/CommerceBranchUsersReport.md)
  - [BancardPixServiceClient::ErrorResponse](docs/ErrorResponse.md)
  - [BancardPixServiceClient::ErrorResponseMessagesInner](docs/ErrorResponseMessagesInner.md)
  - [BancardPixServiceClient::PaymentHook](docs/PaymentHook.md)
  - [BancardPixServiceClient::PaymentHookCreateRequest](docs/PaymentHookCreateRequest.md)
  - [BancardPixServiceClient::PaymentHookCreateRequestPaymentHook](docs/PaymentHookCreateRequestPaymentHook.md)
+ - [BancardPixServiceClient::ShowCommerceBranchUser](docs/ShowCommerceBranchUser.md)
  - [BancardPixServiceClient::ShowPaymentHook](docs/ShowPaymentHook.md)
 
 
