@@ -20,6 +20,12 @@ Obtain commerce branch users report
 ```ruby
 require 'time'
 require 'bancard-pix-service-client'
+# setup authorization
+BancardPixServiceClient.configure do |config|
+  # Configure HTTP basic authorization: basic_auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BancardPixServiceClient::CommerceBranchUsersApi.new
 commerce_id = 56 # Integer | 
@@ -73,7 +79,7 @@ end
 
 ### Authorization
 
-No authorization required
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 
@@ -92,6 +98,12 @@ Create commerce branch user
 ```ruby
 require 'time'
 require 'bancard-pix-service-client'
+# setup authorization
+BancardPixServiceClient.configure do |config|
+  # Configure HTTP basic authorization: basic_auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BancardPixServiceClient::CommerceBranchUsersApi.new
 opts = {
@@ -137,7 +149,7 @@ end
 
 ### Authorization
 
-No authorization required
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 
@@ -156,6 +168,12 @@ Destroy commerce branch user
 ```ruby
 require 'time'
 require 'bancard-pix-service-client'
+# setup authorization
+BancardPixServiceClient.configure do |config|
+  # Configure HTTP basic authorization: basic_auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BancardPixServiceClient::CommerceBranchUsersApi.new
 id = 56 # Integer | 
@@ -198,7 +216,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 

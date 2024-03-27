@@ -74,7 +74,7 @@ module BancardPixServiceClient
       return_type = opts[:debug_return_type] || 'CommerceBranchUsersReport'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || []
+      auth_names = opts[:debug_auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :operation => :"CommerceBranchUsersApi.commerce_branch_users_report",
@@ -136,7 +136,7 @@ module BancardPixServiceClient
       return_type = opts[:debug_return_type] || 'ShowCommerceBranchUser'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || []
+      auth_names = opts[:debug_auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :operation => :"CommerceBranchUsersApi.create_commerce_branch_user",
@@ -197,7 +197,7 @@ module BancardPixServiceClient
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || []
+      auth_names = opts[:debug_auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :operation => :"CommerceBranchUsersApi.destroy_commerce_branch_user",

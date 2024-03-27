@@ -234,6 +234,13 @@ module BancardPixServiceClient
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
+        'basic_auth' =>
+          {
+            type: 'basic',
+            in: 'header',
+            key: 'Authorization',
+            value: basic_auth_token
+          },
       }
     end
 

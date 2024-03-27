@@ -39,6 +39,8 @@ module BancardPixServiceClient
 
     attr_accessor :price_national_currency
 
+    attr_accessor :currency
+
     attr_accessor :vet_tax
 
     attr_accessor :qr_code_expiration
@@ -64,6 +66,7 @@ module BancardPixServiceClient
         :'pix_copy_past' => :'pix_copy_past',
         :'sale_id' => :'sale_id',
         :'price_national_currency' => :'price_national_currency',
+        :'currency' => :'currency',
         :'vet_tax' => :'vet_tax',
         :'qr_code_expiration' => :'qr_code_expiration',
         :'created_at' => :'created_at',
@@ -92,6 +95,7 @@ module BancardPixServiceClient
         :'pix_copy_past' => :'String',
         :'sale_id' => :'Integer',
         :'price_national_currency' => :'String',
+        :'currency' => :'String',
         :'vet_tax' => :'String',
         :'qr_code_expiration' => :'String',
         :'created_at' => :'String',
@@ -194,6 +198,12 @@ module BancardPixServiceClient
         self.price_national_currency = nil
       end
 
+      if attributes.key?(:'currency')
+        self.currency = attributes[:'currency']
+      else
+        self.currency = nil
+      end
+
       if attributes.key?(:'vet_tax')
         self.vet_tax = attributes[:'vet_tax']
       else
@@ -278,6 +288,10 @@ module BancardPixServiceClient
         invalid_properties.push('invalid value for "price_national_currency", price_national_currency cannot be nil.')
       end
 
+      if @currency.nil?
+        invalid_properties.push('invalid value for "currency", currency cannot be nil.')
+      end
+
       if @vet_tax.nil?
         invalid_properties.push('invalid value for "vet_tax", vet_tax cannot be nil.')
       end
@@ -313,6 +327,7 @@ module BancardPixServiceClient
       return false if @pix_copy_past.nil?
       return false if @sale_id.nil?
       return false if @price_national_currency.nil?
+      return false if @currency.nil?
       return false if @vet_tax.nil?
       return false if @qr_code_expiration.nil?
       return false if @created_at.nil?
@@ -337,6 +352,7 @@ module BancardPixServiceClient
           pix_copy_past == o.pix_copy_past &&
           sale_id == o.sale_id &&
           price_national_currency == o.price_national_currency &&
+          currency == o.currency &&
           vet_tax == o.vet_tax &&
           qr_code_expiration == o.qr_code_expiration &&
           created_at == o.created_at &&
@@ -353,7 +369,7 @@ module BancardPixServiceClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, usd_amount_cents, hook_alias, cashier_user_id, buyer_cpf, buyer_email, buyer_cellphone, commerce_id, commerce_branch_id, pix_copy_past, sale_id, price_national_currency, vet_tax, qr_code_expiration, created_at, updated_at, qr_base64].hash
+      [id, usd_amount_cents, hook_alias, cashier_user_id, buyer_cpf, buyer_email, buyer_cellphone, commerce_id, commerce_branch_id, pix_copy_past, sale_id, price_national_currency, currency, vet_tax, qr_code_expiration, created_at, updated_at, qr_base64].hash
     end
 
     # Builds the object from hash

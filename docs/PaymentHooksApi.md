@@ -19,6 +19,12 @@ Cancel payment hook
 ```ruby
 require 'time'
 require 'bancard-pix-service-client'
+# setup authorization
+BancardPixServiceClient.configure do |config|
+  # Configure HTTP basic authorization: basic_auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BancardPixServiceClient::PaymentHooksApi.new
 id = 56 # Integer | id
@@ -62,7 +68,7 @@ end
 
 ### Authorization
 
-No authorization required
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 
@@ -81,6 +87,12 @@ Create payment hook
 ```ruby
 require 'time'
 require 'bancard-pix-service-client'
+# setup authorization
+BancardPixServiceClient.configure do |config|
+  # Configure HTTP basic authorization: basic_auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BancardPixServiceClient::PaymentHooksApi.new
 opts = {
@@ -126,7 +138,7 @@ end
 
 ### Authorization
 
-No authorization required
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 

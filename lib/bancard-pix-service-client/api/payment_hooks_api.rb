@@ -61,7 +61,7 @@ module BancardPixServiceClient
       return_type = opts[:debug_return_type] || 'ShowPaymentHook'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || []
+      auth_names = opts[:debug_auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :operation => :"PaymentHooksApi.cancel_payment_hook",
@@ -123,7 +123,7 @@ module BancardPixServiceClient
       return_type = opts[:debug_return_type] || 'ShowPaymentHook'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || []
+      auth_names = opts[:debug_auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :operation => :"PaymentHooksApi.create_payment_hook",

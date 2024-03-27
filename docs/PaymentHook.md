@@ -16,6 +16,7 @@
 | **pix_copy_past** | **String** |  |  |
 | **sale_id** | **Integer** |  |  |
 | **price_national_currency** | **String** |  |  |
+| **currency** | **String** |  |  |
 | **vet_tax** | **String** |  |  |
 | **qr_code_expiration** | **String** |  |  |
 | **created_at** | **String** |  |  |
@@ -40,6 +41,7 @@ instance = BancardPixServiceClient::PaymentHook.new(
   pix_copy_past: null,
   sale_id: 12345,
   price_national_currency: 107.25,
+  currency: USD,
   vet_tax: 5.50,
   qr_code_expiration: null,
   created_at: null,

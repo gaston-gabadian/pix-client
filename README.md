@@ -56,6 +56,13 @@ Please follow the [installation](#installation) procedure and then run the follo
 # Load the gem
 require 'bancard-pix-service-client'
 
+# Setup authorization
+BancardPixServiceClient.configure do |config|
+  # Configure HTTP basic authorization: basic_auth
+  config.username = 'YOUR_USERNAME'
+  config.password = 'YOUR_PASSWORD'
+end
+
 api_instance = BancardPixServiceClient::CommerceBranchUsersApi.new
 commerce_id = 56 # Integer | 
 opts = {
@@ -105,5 +112,9 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
-Endpoints do not require authorization.
+
+Authentication schemes defined for the API:
+### basic_auth
+
+- **Type**: HTTP basic authentication
 
